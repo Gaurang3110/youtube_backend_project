@@ -8,6 +8,9 @@ const asyncHandler = (requestHandler) => {
 
 export {asyncHandler}
 
+
+
+
 //if function is of try-catch
 
 // const asyncHandler = (fn) => async(req,res,next) => {

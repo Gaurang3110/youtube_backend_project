@@ -1,4 +1,5 @@
 //if function is of promises
+
 const asyncHandler = (requestHandler) => {
   (req, res, next) => {
     Promise.resolve(requestHandler(req,res,next)).catch((err)=>next(err))
@@ -8,6 +9,7 @@ const asyncHandler = (requestHandler) => {
 export {asyncHandler}
 
 //if function is of try-catch
+
 // const asyncHandler = (fn) => async(req,res,next) => {
 //   try{
 //     await fn(req,res,next)

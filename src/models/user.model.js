@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema({
   username : {
@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema({
 //run this method whenever password is modified and data is saved
 userSchema.pre("save", async function(next){
   if(!this.isModified("password")) return next();
-  this.password = bcrypt.hash(this.password,8)
+  this.password = await bcrypt.hash(this.password,8)
   next()
 })
 

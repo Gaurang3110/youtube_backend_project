@@ -35,3 +35,5 @@ app.use("/api/v1/users",userRouter)
 
 
 export default app;
+
+//http://localhost:8000/api/v1/users/register

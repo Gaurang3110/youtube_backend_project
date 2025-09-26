@@ -29,7 +29,21 @@ import fs from 'fs'
       }
     }
 
-    export {uploadOnCloudinary}
+    const deleteFromCloudinary = async(public_id , resource_type = "image") =>{
+      try{
+        if(!public_id){
+          return null
+        }
+        await cloudinary.uploader.destroy(public_id, {
+          resource_type : resource_type,
+        })
+      }catch(error){
+        console.log("error deleting from cloudinary",error)
+        return null
+      }
+    }
+
+    export {uploadOnCloudinary,deleteFromCloudinary}
     
   
     // Optimize delivery by resizing and applying auto-format and auto-quality

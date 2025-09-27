@@ -142,7 +142,6 @@ const updateTweet = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, updatedTweet, "Tweet Updated Successfully"));
 });
 
-
 const deleteTweet = asyncHandler(async (req, res) => {
   //TODO: delete tweet
   const { tweetId } = req.params;
